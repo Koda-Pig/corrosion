@@ -6,22 +6,28 @@ use std::io;
 
 fn main() {
     println!("Guess the number game 🤔");
-    let secret_number = rand::thread_rng().gen_range(1..100);
-    println!("Input your guess");
+    let secret_number = rand::thread_rng().gen_range(1..10);
 
-    // mut makes the variable reassignable/ mutable
-    // by default they're immutable
-    let mut guess = String::new();
+    loop {
+        println!("Input your guess");
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        // mut makes the variable reassignable/ mutable
+        // by default they're immutable
+        let mut guess = String::new();
 
-    let guess: u32 = guess.trim().parse().expect("type a number foo'");
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too big!"),
-        Ordering::Equal => println!("You win!"),
+        let guess: u32 = guess.trim().parse().expect("type a number foo'");
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
     }
 }
