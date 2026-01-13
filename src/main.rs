@@ -6,6 +6,7 @@ use std::io;
 
 fn main() {
     println!("Guess the number game 🤔");
+
     let secret_number = rand::thread_rng().gen_range(1..10);
 
     loop {
@@ -19,7 +20,13 @@ fn main() {
             .read_line(&mut guess)
             .expect("Failed to read line");
 
-        let guess: u32 = guess.trim().parse().expect("type a number foo'");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("You can do better than that m8. Try again");
+                continue;
+            }
+        };
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
