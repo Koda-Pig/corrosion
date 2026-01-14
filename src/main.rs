@@ -9,6 +9,15 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..10);
 
+    // some tuples
+    let unrelated_tuple: (i32, f64, u8) = (500, 6.4, 1);
+    let (_x, _y, _z) = unrelated_tuple; // destructured with pattern + prefixed with _ to ignore the fact that it's an unused var
+    let _last_one = unrelated_tuple.2; // access an element in the tuple by its index
+
+    // some arrays
+    // every element in an array has to have the same type, and the array has a fixed length
+    const _UNRELATED_ARRAY: [i32; 5] = [1, 2, 8000, 99, 420];
+
     loop {
         println!("Input your guess");
 

@@ -1,6 +1,6 @@
 # Corrosion - learning Rust
 
-Stopped here: https://doc.rust-lang.org/book/ch03-02-data-types.html
+Stopped here: https://doc.rust-lang.org/book/ch03-02-data-types.html#the-array-type
 
 ## Running
 
@@ -22,6 +22,8 @@ https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
 
 https://learn.letsgetrusty.com/starter-pack/scheduled/
 
+https://rustlings.rust-lang.org/
+
 ## Notes
 
 ### The difference between `mut` and shadowing:
@@ -36,10 +38,11 @@ I'm most interested in building projects in Rust that can be compiled to Web Ass
 ## Project ideas
 
 1. Static site generator
-2. Build a WebAssembly module that compiles Rust to WASM (then use it in a web app)
-3. Smart contracts. Solana contracts are mostly written in Rust.
+2. Build a WebAssembly module that compiles Rust to Wasm (then use it in a web app)
+3. Smart contracts. Solana contracts are mostly written in Rust. Solana itself is mostly built in Rust.
+   1. https://github.com/solana-labs
 
-## Top 4 Rust mistakes
+## Top 4 Rust mistakes (according to Let's Get Rusty)
 
 1. Thinking you can write Rust code the same way you do as in other languages.
 2. Neglecting the most important 20% of Rust, instead trying to learn everything at once.
