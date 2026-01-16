@@ -27,6 +27,16 @@ fn strange_indeed() {
     println!("The value of y is: {y}");
 }
 
+// here's a simpler version of this:
+// valid expression:
+// fn add(a: u32, b: u32)->u32 {a+b}
+// INvalid expression:
+// fn add(a: u32, b: u32)->u32 {a+b;}
+
+// I guess the equivalent of this in JS would be something like:
+// const statement_function = () => { console.log("📺") }
+// const expression_function = () => 5 // implicit return
+
 // Rust is a serious language. If expressions must check a boolean.
 // There is no concept of 'truthy' and 'falsey' nonsense
 fn if_if_else_else_expressions(x: u32) {
@@ -48,14 +58,24 @@ fn if_if_else_else_expressions(x: u32) {
     println!("{conditional_variable}");
 }
 
-// here's a simpler version of this:
-// valid expression:
-// fn add(a: u32, b: u32)->u32 {a+b}
-// INvalid expression:
-// fn add(a: u32, b: u32)->u32 {a+b;}
+fn definition_of_insanity() {
+    let mut counter = 0;
+    const LIMIT: u32 = 42;
+    loop {
+        println!("Doing the same thing over and over again {counter}");
+        counter = counter + 1;
+
+        if counter < LIMIT {
+            continue;
+        } else {
+            break;
+        }
+    }
+}
 
 fn main() {
     if_if_else_else_expressions(3);
+    definition_of_insanity();
 
     println!("Guess the number game 🤔");
 

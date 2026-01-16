@@ -2,7 +2,7 @@
 
 Stopped here:
 
-https://doc.rust-lang.org/book/ch03-05-control-flow.html#repetition-with-loops
+https://doc.rust-lang.org/book/ch03-05-control-flow.html#returning-values-from-loops
 
 ## Running
 
