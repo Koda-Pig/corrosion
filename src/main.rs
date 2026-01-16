@@ -4,13 +4,39 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
-fn some_other_function(x: i32, some_text: &str, single_char: char) {
-    println!("I like snake case. Snake case is nice. Here's an argument: {x}{single_char}s");
+// this is a 'statement' function (doesn't return anything)
+fn statement_function(some_text: &str, single_char: char) {
+    println!("I like snake case. Snake case is nice. Here's an argument: {single_char}s");
     println!("{some_text}");
 }
 
+// this is an 'expression' function, that does
+fn expression_function(x: u32) -> u32 {
+    return x / 2;
+}
+
+// now this is unusual behavior to me:
+fn strange_indeed() {
+    let y = {
+        let x = 3;
+        // if it has a semicolon, it becomes a statement.
+        // x + 1;
+        // without a semicolon, it's an expression (returns something)
+        x + 1
+    };
+    println!("The value of y is: {y}");
+}
+
+// here's a simpler version of this:
+// valid expression:
+// fn add(a: u32, b: u32)->u32 {a+b}
+// INvalid expression:
+// fn add(a: u32, b: u32)->u32 {a+b;}
+
 fn main() {
-    some_other_function(8000, "kakaka", '🐷');
+    statement_function("kakaka", '🐷');
+    expression_function(22);
+    strange_indeed();
 
     println!("Guess the number game 🤔");
 
