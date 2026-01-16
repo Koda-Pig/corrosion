@@ -4,7 +4,14 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
+fn some_other_function(x: i32, some_text: &str, single_char: char) {
+    println!("I like snake case. Snake case is nice. Here's an argument: {x}{single_char}s");
+    println!("{some_text}");
+}
+
 fn main() {
+    some_other_function(8000, "kakaka", '🐷');
+
     println!("Guess the number game 🤔");
 
     let secret_number = rand::thread_rng().gen_range(1..10);
@@ -21,7 +28,7 @@ fn main() {
 
     // accessed as you would expect:
     let _first_elem = _UNRELATED_ARRAY[0];
-    let _invalid_elem = _UNRELATED_ARRAY[99];
+    // let _invalid_elem = _UNRELATED_ARRAY[99]; // this would throw an error
 
     // println!("invalid probs: {_invalid_elem}");
 
