@@ -1,6 +1,8 @@
 # Corrosion - learning Rust
 
-Stopped here: https://doc.rust-lang.org/book/ch03-03-how-functions-work.html#statements-and-expressions
+Stopped here:
+
+https://doc.rust-lang.org/book/ch03-05-control-flow.html#repetition-with-loops
 
 ## Running
 

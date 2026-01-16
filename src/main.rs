@@ -27,6 +27,27 @@ fn strange_indeed() {
     println!("The value of y is: {y}");
 }
 
+// Rust is a serious language. If expressions must check a boolean.
+// There is no concept of 'truthy' and 'falsey' nonsense
+fn if_if_else_else_expressions(x: u32) {
+    if expression_function(x) == 11 {
+        println!("I'm an if statement, yet I have no parentheses");
+        statement_function("kakaka", '🐷');
+    } else if expression_function(22) == 0 {
+        println!("I am nought but a humble else if statement.");
+        strange_indeed();
+    } else {
+        println!("If all if's and else if's fail, else");
+    }
+
+    // this is pretty cool:
+    let conditional_variable = if x > 10 { 8000 } else { -1000 };
+    // they have to be the same type though.
+    // this would throw an error:
+    // let invalid_conditional_variable = if x == 20 { "nonsense" } else { '😡' };
+    println!("{conditional_variable}");
+}
+
 // here's a simpler version of this:
 // valid expression:
 // fn add(a: u32, b: u32)->u32 {a+b}
@@ -34,9 +55,7 @@ fn strange_indeed() {
 // fn add(a: u32, b: u32)->u32 {a+b;}
 
 fn main() {
-    statement_function("kakaka", '🐷');
-    expression_function(22);
-    strange_indeed();
+    if_if_else_else_expressions(3);
 
     println!("Guess the number game 🤔");
 
