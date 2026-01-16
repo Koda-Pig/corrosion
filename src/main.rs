@@ -16,7 +16,14 @@ fn main() {
 
     // some arrays
     // every element in an array has to have the same type, and the array has a fixed length
+    // writtedn with the type of each elem, and the number of elems in the arr
     const _UNRELATED_ARRAY: [i32; 5] = [1, 2, 8000, 99, 420];
+
+    // accessed as you would expect:
+    let _first_elem = _UNRELATED_ARRAY[0];
+    let _invalid_elem = _UNRELATED_ARRAY[99];
+
+    // println!("invalid probs: {_invalid_elem}");
 
     loop {
         println!("Input your guess");
